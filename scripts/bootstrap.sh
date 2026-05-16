@@ -10,7 +10,8 @@
 #        bash ~/Descargas/bootstrap.sh
 #
 #   ...y ya esta. Esto descarga el proyecto e instala todo lo necesario
-#   (Python, VS Code, el entorno) en una Ubuntu recien instalada.
+#   (Python, VS Code, el entorno) en una Ubuntu recien instalada o en
+#   Ubuntu dentro de WSL (Windows).
 #
 # No hace falta saber usar git ni GitHub: este script se encarga.
 # ---------------------------------------------------------------------------
@@ -22,6 +23,17 @@ REPO_URL="https://github.com/DanielMf31/Curso_Python_Pokemon.git"
 #   bash bootstrap.sh v1.0
 REF="${1:-main}"
 DEST="$HOME/Curso_Python_Pokemon"
+
+# Este instalador es para Ubuntu/Debian (o Ubuntu dentro de WSL).
+if ! command -v apt-get >/dev/null 2>&1; then
+    echo "Este instalador es para Ubuntu/Debian (o WSL con Ubuntu)."
+    echo ""
+    echo "  - Windows: descarga y doble clic en  windows-setup.bat"
+    echo "  - macOS:   bash scripts/setup-macos.sh"
+    echo ""
+    echo "Mas info: docs/01-instalar-python-y-terminal.md"
+    exit 1
+fi
 
 echo ""
 echo "==> Paso 1/3: instalando git (necesario para descargar el proyecto)"

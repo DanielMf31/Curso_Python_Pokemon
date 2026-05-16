@@ -16,23 +16,35 @@ turnos.
 
 No necesitas saber usar git, GitHub ni configurar nada.
 
-## Instalacion en un solo paso (Ubuntu)
+## Instalacion segun tu sistema
 
-1. Descarga el instalador:
-   **[bootstrap.sh](https://raw.githubusercontent.com/DanielMf31/Curso_Python_Pokemon/main/scripts/bootstrap.sh)**
-   (clic derecho -> "Guardar enlace como...").
-2. Abre una terminal: tecla `Ctrl` + `Alt` + `T`.
-3. Escribe esto y pulsa Enter:
+=== Si usas **Windows**
+
+1. Descarga **`windows-setup.bat`** del repositorio.
+2. Doble clic (acepta el aviso de administrador). Instala WSL2 + Ubuntu.
+3. Reinicia, abre **Ubuntu** del menu Inicio, crea usuario/contrasena.
+4. En esa terminal de Ubuntu pega:
+
+        curl -fsSL https://raw.githubusercontent.com/DanielMf31/Curso_Python_Pokemon/main/scripts/bootstrap.sh | bash
+
+   Guia detallada: **[01b — Windows con WSL](01b-windows-wsl.md)**.
+
+=== Si usas **Ubuntu / Linux**
+
+1. Descarga `scripts/bootstrap.sh` con el navegador.
+2. Abre una terminal (`Ctrl` + `Alt` + `T`) y ejecuta:
 
         bash ~/Descargas/bootstrap.sh
 
-Eso descarga el proyecto e instala Python, VS Code y todo lo necesario
-en una Ubuntu recien instalada. Cuando termine, te dira como abrirlo.
+=== Si usas **macOS** (best-effort, no es la via principal)
+
+```bash
+bash scripts/setup-macos.sh
+```
 
 !!! note "Y si no confias en ejecutar un script a ciegas?"
-    Bien pensado. Abre `bootstrap.sh` con un editor de texto y lee lo
-    que hace antes de ejecutarlo: son ~50 lineas comentadas en espanol.
-    Eso tambien es aprender.
+    Bien pensado. Abre el script con un editor y lee lo que hace antes
+    de ejecutarlo: estan comentados en espanol. Eso tambien es aprender.
 
 ## Como funciona el curso
 
@@ -54,6 +66,7 @@ Empieza por **[Empieza aqui](00-empieza-aqui.md)**.
 | Nivel | Tema |
 |---|---|
 | 01 | Instalar Python y la terminal |
+| 01b | Windows con WSL |
 | 02 | Variables y tipos |
 | 03 | Estructuras de datos |
 | 04 | Condicionales y bucles |

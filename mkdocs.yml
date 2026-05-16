@@ -46,6 +46,7 @@ nav:
   - Inicio: index.md
   - Empieza aqui: 00-empieza-aqui.md
   - 01 Instalar Python y terminal: 01-instalar-python-y-terminal.md
+  - 01b Windows (WSL): 01b-windows-wsl.md
   - 02 Variables y tipos: 02-variables-y-tipos.md
   - 03 Estructuras de datos: 03-estructuras-de-datos.md
   - 04 Condicionales y bucles: 04-condicionales-y-bucles.md

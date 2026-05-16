@@ -38,6 +38,11 @@ aviso() {
     echo "    [AVISO] $1"
 }
 
+# Detecta si estamos dentro de WSL (Ubuntu corriendo sobre Windows).
+es_wsl() {
+    grep -qiE "microsoft|wsl" /proc/version 2>/dev/null
+}
+
 # ---------------------------------------------------------------------------
 # 1. Comprobar que el sistema operativo es Ubuntu o Debian.
 # ---------------------------------------------------------------------------
@@ -88,7 +93,14 @@ ok "Python y utilidades instaladas."
 # ---------------------------------------------------------------------------
 paso "Instalando Visual Studio Code..."
 
-if command -v code >/dev/null 2>&1; then
+if es_wsl; then
+    aviso "Detectado WSL (Ubuntu sobre Windows)."
+    aviso "Aqui NO se instala VS Code con apt: se usa el de Windows."
+    aviso "1) Instala VS Code en WINDOWS: https://code.visualstudio.com"
+    aviso "2) En VS Code instala la extension 'WSL' (de Microsoft)."
+    aviso "3) Luego, desde ESTA terminal, ejecuta:  code ."
+    aviso "   (se abrira VS Code conectado a tu Ubuntu de WSL)"
+elif command -v code >/dev/null 2>&1; then
     ok "VS Code ya estaba instalado. Saltando."
 else
     # Intento principal: repositorio oficial de Microsoft.
