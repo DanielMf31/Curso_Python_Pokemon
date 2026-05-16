@@ -1,0 +1,61 @@
+site_name: Curso Python con Pokemon
+site_description: Aprende Python desde cero construyendo una batalla Pokemon por terminal.
+site_url: https://danielmf31.github.io/Curso_Python_Pokemon/
+repo_url: https://github.com/DanielMf31/Curso_Python_Pokemon
+repo_name: DanielMf31/Curso_Python_Pokemon
+
+# La documentacion vive dentro del proyecto modelo.
+docs_dir: 09_pokemon_battle_cli/docs
+
+theme:
+  name: material
+  language: es
+  palette:
+    - scheme: default
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - scheme: slate
+      primary: red
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.instant
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - content.code.copy
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+
+nav:
+  - Inicio: index.md
+  - Empieza aqui: 00-empieza-aqui.md
+  - 01 Instalar Python y terminal: 01-instalar-python-y-terminal.md
+  - 02 Variables y tipos: 02-variables-y-tipos.md
+  - 03 Estructuras de datos: 03-estructuras-de-datos.md
+  - 04 Condicionales y bucles: 04-condicionales-y-bucles.md
+  - 05 Funciones: 05-funciones.md
+  - 06 Clases y objetos: 06-clases-y-objetos.md
+  - 07 Imports y paquetes: 07-imports-y-paquetes.md
+  - 08 La tabla de tipos: 08-la-tabla-de-tipos.md
+  - 09 La formula de dano: 09-la-formula-de-dano.md
+  - 10 El bucle de batalla: 10-el-bucle-de-batalla.md
+  - 11 Juntandolo todo: 11-juntandolo-todo.md
+  - 12 Extender el proyecto: 12-extender-el-proyecto.md
+  - Glosario: glosario.md
+  - Retos: challenges/challenges.md

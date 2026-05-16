@@ -1,0 +1,3 @@
+# Dependencias SOLO para construir la web de documentacion.
+# (No hacen falta para jugar ni para hacer el curso.)
+mkdocs-material>=9.5
